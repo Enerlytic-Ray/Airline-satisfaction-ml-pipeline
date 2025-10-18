@@ -151,9 +151,33 @@ The **Workflow Flowchart** for the **Enerlytic Airline Satisfaction ML Pipeline*
 - Integrate real-time Power BI updates via SQL or API
 - Extend dashboard for executive decision analytics 
 
-----
 
-## ✍️ Author
+## 🧮 Sample Code Snippet Section
+Example of the model training and evaluation step:
+
+```python
+# Train-Test Split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, stratify=y, random_state=42)
+
+# Logistic Regression
+log_model = LogisticRegression(max_iter=500)
+log_model.fit(X_train, y_train)
+
+# Random Forest
+rf_model = RandomForestClassifier(n_estimators=200, random_state=42)
+rf_model.fit(X_train, y_train)
+</p>
+
+## Evaluate
+for name, model in [("Logistic Regression", log_model), ("Random Forest", rf_model)]:
+y_pred = model.predict(X_test)
+acc = accuracy_score(y_test, y_pred)
+roc = roc_auc_score(y_test, model.predict_proba(X_test)[:,1])
+print(f"{name}: Accuracy={acc:.3f}, ROC-AUC={roc:.3f}")
+</p>
+
+
+✍️ Author
 
 Adejoro Raymond Olaotan
 
