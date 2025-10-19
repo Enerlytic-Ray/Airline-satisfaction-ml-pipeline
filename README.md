@@ -175,14 +175,3 @@ acc = accuracy_score(y_test, y_pred)
 roc = roc_auc_score(y_test, model.predict_proba(X_test)[:,1])
 print(f"{name}: Accuracy={acc:.3f}, ROC-AUC={roc:.3f}")
 </p>
-
-
-✍️ Author
-
-Adejoro Raymond Olaotan
-
-Electrical Engineer | Business Data Analyst | ML Enthusiast
-
-📧 raydey04@gmail.com
-
-🌐 GitHub: Enerlytic-Ray
